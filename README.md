@@ -1,56 +1,132 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎵 Guess the Songs - Music Trivia Game 🎮
 
-## Getting Started
+## 🌟 Project Overview
 
-First, run the development server:
+**Guess the Songs** is an interactive web-based music trivia game that challenges your musical knowledge and tests your ability to recognize songs quickly!
+
+## 🚀 Features
+
+- 🎧 Guess songs from various genres
+- 🏆 Leaderboard to track your progress
+- 👤 User authentication
+- 📊 Personal statistics tracking
+
+## 🛠 Tech Stack
+
+![Next.js](https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+
+## 🔧 Project Setup: Step-by-Step Guide
+
+### 1. Prerequisites 🖥️
+
+Before you begin, ensure you have the following installed:
+- **Node.js** (v18 or later) 
+  - ✅ Check with `node --version`
+  - 📥 Download from [Node.js Official Website](https://nodejs.org/)
+- **npm** (comes with Node.js)
+  - ✅ Check with `npm --version`
+
+### 2. Clone the Repository 📂
 
 ```bash
+# 🌐 Clone using HTTPS
+git clone https://github.com/valo1337/guess-the-songs.git
+
+# 📁 Navigate to project directory
+cd guess-the-songs
+```
+
+### 3. Install Dependencies 📦
+
+```bash
+# 🚀 Install all project dependencies
+npm install
+
+# 💡 Tip: This might take a few minutes. Grab a ☕ while you wait!
+```
+
+### 4. Set Up Environment 🌍
+
+```bash
+# 🗄️ Initialize the database
+npx prisma migrate dev
+
+# 🔑 Optional: If you want to seed initial data
+npx prisma db seed
+```
+
+### 5. Configure Environment Variables 🔐
+
+1. Create a `.env` file in the project root
+2. Add the following variables:
+```env
+# 🔐 Database URL (Prisma)
+DATABASE_URL="file:./dev.db"
+
+# 🔑 NextAuth Secret (generate a random string)
+NEXTAUTH_SECRET="your_super_secret_key_here"
+
+# 🌐 Your application's URL
+NEXTAUTH_URL="http://localhost:3000"
+```
+
+### 6. Run the Development Server 🚀
+
+```bash
+# 🎮 Start the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# 🌐 Open http://localhost:3000 in your browser
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 7. Admin Setup (Optional) 👑
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-## Setting Up an Admin User
-
-To set up an admin user, use the `set-admin.ts` script:
-
-1. Install `ts-node` if not already installed:
 ```bash
+# 🛡️ Install ts-node globally
 npm install -g ts-node
-```
 
-2. Run the script with the user's email and admin status:
-```bash
-# To set an admin
+# 🔓 Create an admin user
 ts-node scripts/set-admin.ts admin@example.com true
-
-# To remove admin status
-ts-node scripts/set-admin.ts admin@example.com false
 ```
 
-The admin user will now have access to the debug panel and other admin-specific features.
+## 🎮 How to Play
+
+1. 🔐 Sign up or log in
+2. 🎵 Start a new game
+3. 👂 Listen to song snippets
+4. 🤔 Guess the song title and artist
+5. 🏆 Earn points and climb the leaderboard!
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 🛠 Troubleshooting
+
+- 🔍 **Dependency Issues**: 
+  - Run `npm cache clean --force`
+  - Delete `node_modules` folder
+  - Run `npm install` again
+
+- 🗄️ **Database Problems**:
+  - Delete `prisma/dev.db`
+  - Run `npx prisma migrate dev`
+
+## 📊 Game Statistics
+
+![Total Players](https://img.shields.io/badge/Total%20Players-Growing-brightgreen)
+![Songs in Database](https://img.shields.io/badge/Songs-100+-blue)
+
+## 📜 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## 🎵 Enjoy the Music, Enjoy the Game! 🎉
